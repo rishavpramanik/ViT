@@ -149,6 +149,7 @@ class ImageTransformer(nn.Module):
         x = self.to_cls_token(x[:, 0])
         
         x = self.nn1(x)
+        #For Extra Feed Forward Layers
         # x = self.af1(x)
         # x = self.do1(x)
         # x = self.nn2(x)
