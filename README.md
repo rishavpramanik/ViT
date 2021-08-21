@@ -1,5 +1,5 @@
-# VisionTransformer (Pytorch)
-A complete easy to follow implementation of Google's Vision Transformer proposed in "AN IMAGE IS WORTH 16X16 WORDS". This pytorch implementation has comments for better understanding. 
+# VisionTransformer (Pytorch Implementation)
+Implementation of Google's Vision Transformer proposed in "AN IMAGE IS WORTH 16X16 WORDS" using PyTorch framework.
 
 **An image is worth 16x16 words: transformers for image recognition at scale:**
 Find the original paper by Google research team[here](https://arxiv.org/pdf/2010.11929.pdf).
@@ -12,4 +12,4 @@ Find the original paper by Google research team[here](https://arxiv.org/pdf/2010
 - According to the paper, if you are training from scratch, accuracy might not match state of the art CNNs like ResNet. Pretrain on a larger dataset to exploit the full potential of Vision transformer.
 - Easy to understand commnets are available in the code for better understanding, specially for beginners in attention and transformer models.
 - The standalone script "Google_ViT" is sufficient to run this code.
-- Please do not forget to define loss values
+- Please do not forget to check loss values and optimizer.
