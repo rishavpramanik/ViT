@@ -214,7 +214,6 @@ def train(trainset, valset, model, criterion, optimizer, scheduler, num_epochs):
             for inputs, labels in dataloaders[phase]:
                 inputs = inputs.to(device)
                 labels = labels.to(device)
-                # print('bruh')
 
                 # zero the parameter gradients
                 optimizer.zero_grad()
