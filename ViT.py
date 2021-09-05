@@ -1,4 +1,6 @@
 from ViT.utils.utilities import *
+
+
 BATCH_SIZE_TRAIN = 64
 BATCH_SIZE_TEST = 16
 
@@ -39,8 +41,8 @@ optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 criterion = nn.CrossEntropyLoss()
 exp_lr_scheduler = lr_scheduler.CosineAnnealingWarmRestarts(optimizer,1,verbose=False)
 
-train_loss_history, test_loss_history = [], []
-for epoch in range(1):
+
+if __name__=='main':
     print('Epoch:', epoch)
     start_time = time.time()
     model=train(train_loader, test_loader, model, criterion, optimizer, exp_lr_scheduler, N_EPOCHS)
