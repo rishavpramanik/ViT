@@ -1,4 +1,4 @@
-from ViT.utils import *
+from ViT.utils.utilities import *
 BATCH_SIZE_TRAIN = 64
 BATCH_SIZE_TEST = 16
 
