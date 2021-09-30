@@ -18,7 +18,7 @@ on:
     # The branches below must be a subset of the branches above
     branches: [ main ]
   schedule:
-    - cron: '25 2 * * 5'
+    - cron: '21 16 * * 0'
 
 jobs:
   analyze:
@@ -62,7 +62,15 @@ jobs:
     # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
-
+- name: Setup Python
+  uses: actions/setup-python@v2.2.2
+  with:
+    # Version range or exact version of a Python version to use, using SemVer's version range syntax.
+    python-version: # optional, default is 3.x
+    # The target architecture (x86, x64) of the Python interpreter.
+    architecture: # optional
+    # Used to pull python distributions from actions/python-versions. Since there's a default, this is typically not supplied by the user.
+    token: # optional, default is ${{ github.token }}
     #- run: |
     #   make bootstrap
     #   make release
