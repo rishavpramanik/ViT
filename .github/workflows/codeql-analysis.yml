@@ -9,6 +9,21 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
+- name: Setup Python
+  uses: actions/setup-python@v2.2.2
+  with:
+    # Version range or exact version of a Python version to use, using SemVer's version range syntax.
+    python-version: # optional, default is 3.x
+    # The target architecture (x86, x64) of the Python interpreter.
+    architecture: # optional
+    # Used to pull python distributions from actions/python-versions. Since there's a default, this is typically not supplied by the user.
+    token: # optional, default is ${{ github.token }}
+    - run: |
+       make bootstrap
+       make release
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
 name: "CodeQL"
 
 on:
@@ -62,18 +77,4 @@ jobs:
     # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
-- name: Setup Python
-  uses: actions/setup-python@v2.2.2
-  with:
-    # Version range or exact version of a Python version to use, using SemVer's version range syntax.
-    python-version: # optional, default is 3.x
-    # The target architecture (x86, x64) of the Python interpreter.
-    architecture: # optional
-    # Used to pull python distributions from actions/python-versions. Since there's a default, this is typically not supplied by the user.
-    token: # optional, default is ${{ github.token }}
-    #- run: |
-    #   make bootstrap
-    #   make release
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
