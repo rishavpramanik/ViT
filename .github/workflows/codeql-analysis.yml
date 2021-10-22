@@ -19,8 +19,6 @@
     # Used to pull python distributions from actions/python-versions. Since there's a default, this is typically not supplied by the user.
     token: # optional, default is ${{ github.token }}
     - run: |
-       make bootstrap
-       make release
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
