@@ -2,7 +2,7 @@
 Implementation of Google's Vision Transformer proposed in "AN IMAGE IS WORTH 16X16 WORDS" using PyTorch framework.
 
 **An image is worth 16x16 words: transformers for image recognition at scale:**
-Find the original paper by Google research team[here](https://arxiv.org/pdf/2010.11929.pdf).
+Find the original paper [here](https://arxiv.org/pdf/2010.11929.pdf).
 <p align="center">
   <img src="./ViT.png" width="600" title="Vision transformer">
 </p>
