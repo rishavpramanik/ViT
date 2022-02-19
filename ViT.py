@@ -5,7 +5,7 @@ BATCH_SIZE_TRAIN = 64
 BATCH_SIZE_TEST = 16
 
 
-DL_PATH = "C:\Pytorch\Spyder\CIFAR10_data" # Use your own path
+DL_PATH = "C:\Pytorch\Spyder\CIFAR10_data"
 # CIFAR10: 60000 32x32 color images in 10 classes, with 6000 images per class
 transform = torchvision.transforms.Compose(
      [#torchvision.transforms.RandomRotation(10, resample=PIL.Image.BILINEAR),   #Augment
@@ -13,6 +13,7 @@ transform = torchvision.transforms.Compose(
      torchvision.transforms.ToTensor(),
      torchvision.transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))])
 
+#To train using Imagefolder uncomment the below lines
 #train_dataset = datasets.ImageFolder('custom dataset',transform=transform)
 #test_dataset = datasets.ImageFolder('custom dataset',transform=transform)
 #train_size = math.floor(len(dataset)*0.8)
@@ -38,6 +39,7 @@ model.to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 
+#Define loss and scheduler
 criterion = nn.CrossEntropyLoss()
 exp_lr_scheduler = lr_scheduler.CosineAnnealingWarmRestarts(optimizer,1,verbose=False)
 
